@@ -17,68 +17,101 @@ The dataset consists of three main CSV files (now loaded into a database):
 
 | Table / Source | Contents / Description|
 | ------------- | ------------- |
-| train.csv | Main weekly sales data: store, department, date, weekly sales, and holiday flag.|
-| stores.csv  | Metadata about each store: store ID, type (size/type), store size.  |
-| features.csv  | Weekly store‑level features including fuel price, markdowns, CPI, unemployment, holiday flags, and more.  |
+| train.csv | Weekly sales data for each store and department|
+| stores.csv  | Metadata about store type and square footage  |
+| features.csv  | External factors such as fuel prices, temperature, and holidays |
 
-These were imported into a PostgreSQL database with three tables — train, stores, and features — to enable efficient querying, aggregation, and joining across data tables.
-
-(Optionally: include a small ER‑diagram or list of table schemas if helpful.)
+**Key Columns**
+- train: store, dept, date, weekly_sales, is_holiday
+- stores: store, type, size
+- features: store, date, temperature, fuel_price, cpi, unemployment, is_holiday
 
 ## Executive Summary
 
-High-level findings — what a business manager should know at a glance.
+**High-level findings:** 
 
-Over the full period, total sales grew month-over-month (on average), with noticeable spikes during holiday weeks.
+- **Store Type A locations contribute the highest total sales:** $4.33B vs. $2B for Type B and $0.41B for Type C.
+- **Holiday weeks show noticeable spikes in sales:** Top single-store holiday week sales exceeded $693K.
+- **Sales vary significantly by department,** with Department 92 averaging $75K/week, leading overall performance.
+- **Several stores demonstrate consistent underperformance** (e.g., stores outside the top 5) and may benefit from targeted promotional strategies.
 
-Store type A (or whichever type ends up highest) consistently generated the highest total sales among store categories.
-
-Departments X, Y, Z (top 3 by total sales) contributed the majority of revenue — indicating core offerings.
-
-Holiday weeks saw sales increases of ~N% compared to non-holiday weeks (on average).
-
-Seasonal patterns: sales peak around end‑year holiday season and dip in mid-year summer months.
-
-(Fill in N%, department names, actual trends after you run queries.)
+Detailed insights are shown below.
 
 ## Insights Deep Dive
 📊 Store‑level Performance
 
-Top stores by total sales: Store 1, Store 7, Store 15 … (list top 5) — these stores consistently outperform others.
+| Store | Total Sales (USD) |
+| ------------- | ------------- |
+| 20 | 301,397,792.46 |
+| 4  | 299,543,953.38 |
+| 14 | 288,999,911.34 |
+| 13 | 286,517,703.80 |
+| 2 | 275,382,440.98 |
 
-Store type comparison: Type A stores outperform B and C in both total and average weekly sales, suggesting larger or better‑performing outlets yield better revenue despite possibly higher overheads.
+**Insight:** These top 5 stores consistently outperform others, contributing a large share of total revenue.
+
+**Store type comparison:**
+*Type A stores* outperform Types B and C in total sales ($4.33B vs $2B and $0.41B) — suggesting larger or better-performing outlets yield higher revenue despite potentially higher overheads.
 
 ## 🛒 Department Analysis
 
-Departments 5, 8, and 73 (for example) have the highest cumulative sales — they appear to be driving the bulk of revenue.
+**Top departments by average weekly sales:**
 
-Some departments show seasonal variation — e.g., Dept 5 peaks during holiday months; Dept 8 maintains stable sales throughout.
+| Department | Avg Weekly Sales (USD) |
+| ------------- | ------------- |
+| 92 | 75,204.87 |
+| 95  | 69,824.42 |
+| 38 | 61,090.62 |
+| 72 | 50,566.52 |
+| 65 | 45,441.71 |
+
+**Insight:** Departments 92 and 95 are the primary revenue drivers, while some departments show seasonal variation (e.g., peaks around holiday periods).
 
 ## 📆 Time Trends & Seasonality
 
-Monthly sales across all stores show a general upward trend over the years, with notable spikes during end‑of-year months (Nov–Dec).
+**Weekly sales trend (top weeks):**
 
-Holiday weeks (as flagged in the data) show a statistically significant uplift in sales compared to non-holidays.
+| Date | Total Sales (USD) |
+| ------------- | ------------- |
+| 2010-02-05 | 49,750,740.50 |
+| 2010-02-12 | 48,336,677.63 |
+| 2010-02-19 | 48,276,993.78 |
+| 2010-02-26 | 43,968,571.13 |
+| 2010-03-05 | 46,871,470.30 |
+
+**Insight:** Weekly sales fluctuate between $44M–$50M, highlighting trends over time and enabling forecasts for inventory and staffing.
 
 ## 💡 Holiday & External Factors Impact
 
-Combining features data with sales, there seems to be a correlation between markdown periods and temporary sales boosts (before returns to baseline).
+**Top holiday week sales:**
 
-Fuel price and CPI fluctuations show minor but detectable correlation with sales volume — possibly reflecting consumer spending power and demand elasticity.
+| Date | Store | Weekly Sales (USD) |
+| ------------- | ------------- | ------------- |
+| 2010-11-26 | 10 | 693,099.36 |
+| 2011-11-25 | 35 | 649,770.18 |
+| 2011-11-25 | 10 | 630,999.19 |
+| 2010-11-26 | 35 | 627,962.93 |
+| 2010-11-26 | 14 | 474,330.10 |
+
+**Insight:** Holidays significantly boost sales, with the highest single-store holiday week exceeding $693K.
+
+**Total sales by store type:**
+
+| Store Type | Total Sales (USD) |
+| ------------- | ------------- |
+| A | 4,331,014,722.75 |
+| B | 2,000,700,736.82 |
+| C | 405,503,527.54 |
+
+**Insight:** Type A stores dominate revenue, suggesting strategic focus on high-performing store types.
 
 ## Recommendations
 
-Based on these insights, here are some data‑driven recommendations:
-
-Focus inventory & promotions on top‑performing departments especially ahead of holiday seasons (e.g., ahead of November–December) to maximize revenue.
-
-Expand or prioritize store type A (or high-performing stores) for expansion or resource allocation, as they yield higher sales efficiency.
-
-Leverage markdowns strategically — plan markdown promotions during off‑peak months to smooth out seasonal dips.
-
-Use holiday weeks for marketing campaigns — since holidays show clear uplift in sales, aligning promotions or special offers before and during holidays could further boost revenue.
-
-Monitor external economic indicators (fuel price, CPI) alongside sales — could provide early signals for demand changes and help adjust pricing or stocking strategies.
+- Focus inventory & promotions on top-performing departments ahead of holiday seasons (Nov–Dec).
+- Expand or prioritize store Type A for resource allocation and potential growth.
+- Plan markdowns strategically during off-peak months to smooth seasonal dips.
+- Leverage holiday weeks for marketing campaigns to maximize uplift.
+- Monitor external economic indicators like CPI and fuel prices to anticipate demand changes.
 
 ## How to Reproduce / Use This Project
 - Clone repo
@@ -99,16 +132,11 @@ psql walmart_sales < sql/analysis_queries.sql
 
 ## Conclusion & Next Steps
 
-This project shows how real‑world retail data can be structured, imported, and analyzed to yield business‑relevant insights. For future work, I plan to:
-
-Build a visualization dashboard (e.g., using Tableau or Python + matplotlib/seaborn) to make trends and insights accessible.
-
-Extend analysis to predict future sales (time-series forecasting) — useful for inventory planning and demand forecasting.
-
-Incorporate additional data (e.g., promotions, weather, demographic data) to enrich analysis and improve model robustness.
+This project demonstrates how real-world retail data can be structured, imported, and analyzed to generate actionable business insights. Next steps:
+- Build a visualization dashboard using Tableau or Python (matplotlib/seaborn) for clear trend presentation.
+- Extend analysis to predict future sales for inventory planning and demand forecasting.
+- Incorporate additional data (e.g., promotions, weather, demographics) to enrich insights and improve predictive accuracy.
 
 ## Credits & References
 
-Retail dataset from Kaggle: Walmart Recruiting – Store Sales Forecasting
-
-Project structure inspired by best‑practice templates and portfolio advice (e.g., sample README from AnalyticsAccelerator)
+- Retail dataset from Kaggle: Walmart Recruiting – Store Sales Forecasting
