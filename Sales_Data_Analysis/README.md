@@ -79,24 +79,24 @@ Use holiday weeks for marketing campaigns — since holidays show clear uplift i
 
 Monitor external economic indicators (fuel price, CPI) alongside sales — could provide early signals for demand changes and help adjust pricing or stocking strategies.
 
-# **How to Reproduce / Use This Project**
-## Clone repo
+## How to Reproduce / Use This Project
+- Clone repo
 git clone <your-repo-url>
 cd Sales_Data_Analysis
 
-## Load data into PostgreSQL
+- Load data into PostgreSQL
 psql walmart_sales < sql/schema.sql
 \COPY train FROM 'Raw_Data/train.csv' CSV HEADER;
 \COPY stores FROM 'Raw_Data/stores.csv' CSV HEADER;
 \COPY features FROM 'Raw_Data/features.csv' CSV HEADER NULL 'NA';
 
-## Run analysis queries
+- Run analysis queries
 psql walmart_sales < sql/analysis_queries.sql
 
 
 (Alternatively — run queries inside VS Code or export results to CSV and visualize in your preferred tool.)
 
-## Conclusion & Next Steps
+# Conclusion & Next Steps
 
 This project shows how real‑world retail data can be structured, imported, and analyzed to yield business‑relevant insights. For future work, I plan to:
 
@@ -106,7 +106,7 @@ Extend analysis to predict future sales (time-series forecasting) — useful for
 
 Incorporate additional data (e.g., promotions, weather, demographic data) to enrich analysis and improve model robustness.
 
-## Credits & References
+# Credits & References
 
 Retail dataset from Kaggle: Walmart Recruiting – Store Sales Forecasting
 
