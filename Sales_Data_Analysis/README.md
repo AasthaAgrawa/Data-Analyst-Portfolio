@@ -1,5 +1,5 @@
-📈 Walmart Sales Data Analysis
-Background & Overview
+## 📈 Walmart Sales Data Analysis
+# Background & Overview
 
 The goal of this project is to analyze real‑world retail data (from Walmart) to uncover sales trends, store performance, and insights that could be valuable for business decision‑making. I chose the publicly available Walmart recruiting/stores sales dataset because it:
 
@@ -11,7 +11,7 @@ Allows me to demonstrate full‑stack data work: from raw CSV → database → S
 
 The project aims to answer questions such as: Which stores or store types generate most revenue? How do sales evolve month‑to‑month? Does holiday/weekend/seasonality impact sales? Which departments consistently perform well?
 
-Data Structure Overview
+# Data Structure Overview
 
 The dataset consists of three main CSV files (now loaded into a database):
 
@@ -24,7 +24,7 @@ These were imported into a PostgreSQL database with three tables — train, stor
 
 (Optionally: include a small ER‑diagram or list of table schemas if helpful.)
 
-Executive Summary
+# Executive Summary
 
 High-level findings — what a business manager should know at a glance.
 
@@ -40,32 +40,32 @@ Seasonal patterns: sales peak around end‑year holiday season and dip in mid-ye
 
 (Fill in N%, department names, actual trends after you run queries.)
 
-Insights Deep Dive
+# Insights Deep Dive
 📊 Store‑level Performance
 
 Top stores by total sales: Store 1, Store 7, Store 15 … (list top 5) — these stores consistently outperform others.
 
 Store type comparison: Type A stores outperform B and C in both total and average weekly sales, suggesting larger or better‑performing outlets yield better revenue despite possibly higher overheads.
 
-🛒 Department Analysis
+# 🛒 Department Analysis
 
 Departments 5, 8, and 73 (for example) have the highest cumulative sales — they appear to be driving the bulk of revenue.
 
 Some departments show seasonal variation — e.g., Dept 5 peaks during holiday months; Dept 8 maintains stable sales throughout.
 
-📆 Time Trends & Seasonality
+# 📆 Time Trends & Seasonality
 
 Monthly sales across all stores show a general upward trend over the years, with notable spikes during end‑of-year months (Nov–Dec).
 
 Holiday weeks (as flagged in the data) show a statistically significant uplift in sales compared to non-holidays.
 
-💡 Holiday & External Factors Impact
+# 💡 Holiday & External Factors Impact
 
 Combining features data with sales, there seems to be a correlation between markdown periods and temporary sales boosts (before returns to baseline).
 
 Fuel price and CPI fluctuations show minor but detectable correlation with sales volume — possibly reflecting consumer spending power and demand elasticity.
 
-Recommendations
+# Recommendations
 
 Based on these insights, here are some data‑driven recommendations:
 
@@ -79,7 +79,7 @@ Use holiday weeks for marketing campaigns — since holidays show clear uplift i
 
 Monitor external economic indicators (fuel price, CPI) alongside sales — could provide early signals for demand changes and help adjust pricing or stocking strategies.
 
-How to Reproduce / Use This Project
+## How to Reproduce / Use This Project
 # Clone repo
 git clone <your-repo-url>
 cd Sales_Data_Analysis
