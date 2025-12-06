@@ -15,10 +15,11 @@ The project aims to answer questions such as: Which stores or store types genera
 
 The dataset consists of three main CSV files (now loaded into a database):
 
-Table / Source	Contents / Description
-train.csv	Main weekly sales data: store, department, date, weekly sales, and holiday flag.
-stores.csv	Metadata about each store: store ID, type (size/type), store size.
-features.csv	Weekly store‑level features including fuel price, markdowns, CPI, unemployment, holiday flags, and more.
+| Table / Source | Contents / Description|
+| ------------- | ------------- |
+| train.csv | Main weekly sales data: store, department, date, weekly sales, and holiday flag.|
+| stores.csv  | Metadata about each store: store ID, type (size/type), store size.  |
+| features.csv  | Weekly store‑level features including fuel price, markdowns, CPI, unemployment, holiday flags, and more.  |
 
 These were imported into a PostgreSQL database with three tables — train, stores, and features — to enable efficient querying, aggregation, and joining across data tables.
 
@@ -96,7 +97,7 @@ psql walmart_sales < sql/analysis_queries.sql
 
 (Alternatively — run queries inside VS Code or export results to CSV and visualize in your preferred tool.)
 
-# Conclusion & Next Steps
+## Conclusion & Next Steps
 
 This project shows how real‑world retail data can be structured, imported, and analyzed to yield business‑relevant insights. For future work, I plan to:
 
@@ -106,7 +107,7 @@ Extend analysis to predict future sales (time-series forecasting) — useful for
 
 Incorporate additional data (e.g., promotions, weather, demographic data) to enrich analysis and improve model robustness.
 
-# Credits & References
+## Credits & References
 
 Retail dataset from Kaggle: Walmart Recruiting – Store Sales Forecasting
 
