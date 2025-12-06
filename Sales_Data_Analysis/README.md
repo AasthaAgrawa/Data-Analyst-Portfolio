@@ -1,4 +1,4 @@
-**# 📈 Walmart Sales Data Analysis**
+# **📈 Walmart Sales Data Analysis**
 # Background & Overview
 
 The goal of this project is to analyze real‑world retail data (from Walmart) to uncover sales trends, store performance, and insights that could be valuable for business decision‑making. I chose the publicly available Walmart recruiting/stores sales dataset because it:
