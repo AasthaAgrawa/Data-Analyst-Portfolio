@@ -1,4 +1,4 @@
-## 📈 Walmart Sales Data Analysis
+**📈 Walmart Sales Data Analysis**
 # Background & Overview
 
 The goal of this project is to analyze real‑world retail data (from Walmart) to uncover sales trends, store performance, and insights that could be valuable for business decision‑making. I chose the publicly available Walmart recruiting/stores sales dataset because it:
@@ -9,7 +9,7 @@ Offers multiple tables (sales data, store metadata, weekly features like holiday
 
 Allows me to demonstrate full‑stack data work: from raw CSV → database → SQL analysis → business‑oriented insights.
 
-The project aims to answer questions such as: Which stores or store types generate most revenue? How do sales evolve month‑to‑month? Does holiday/weekend/seasonality impact sales? Which departments consistently perform well?
+The project aims to answer questions such as: Which stores or store types generate most revenue? How do sales evolve over time? Does holiday/weekend/seasonality impact sales? Which departments consistently perform well?
 
 # Data Structure Overview
 
@@ -79,7 +79,7 @@ Use holiday weeks for marketing campaigns — since holidays show clear uplift i
 
 Monitor external economic indicators (fuel price, CPI) alongside sales — could provide early signals for demand changes and help adjust pricing or stocking strategies.
 
-## How to Reproduce / Use This Project
+**How to Reproduce / Use This Project**
 # Clone repo
 git clone <your-repo-url>
 cd Sales_Data_Analysis
@@ -96,7 +96,7 @@ psql walmart_sales < sql/analysis_queries.sql
 
 (Alternatively — run queries inside VS Code or export results to CSV and visualize in your preferred tool.)
 
-Conclusion & Next Steps
+# Conclusion & Next Steps
 
 This project shows how real‑world retail data can be structured, imported, and analyzed to yield business‑relevant insights. For future work, I plan to:
 
@@ -106,7 +106,7 @@ Extend analysis to predict future sales (time-series forecasting) — useful for
 
 Incorporate additional data (e.g., promotions, weather, demographic data) to enrich analysis and improve model robustness.
 
-Credits & References
+# Credits & References
 
 Retail dataset from Kaggle: Walmart Recruiting – Store Sales Forecasting
 
