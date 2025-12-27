@@ -113,6 +113,12 @@ Detailed insights are shown below.
 - Leverage holiday weeks for marketing campaigns to maximize uplift.
 - Monitor external economic indicators like CPI and fuel prices to anticipate demand changes.
 
+##📊 Executive Dashboard
+
+This dashboard summarizes key revenue drivers, top-performing stores, and seasonal trends to support executive decision-making around inventory planning and promotions.
+<img width="1189" height="668" alt="Screenshot 2025-12-27 at 3 08 05 PM" src="https://github.com/user-attachments/assets/4ea29ca1-5cdc-43fb-bbf5-a13705b35253" />
+
+
 ## How to Reproduce / Use This Project
 - Clone repo
 git clone <your-repo-url>
